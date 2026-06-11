@@ -68,8 +68,8 @@ function Header() {
             <a key={l.href} href={l.href} className="text-foreground/70 hover:text-primary transition-colors">{l.label}</a>
           ))}
         </nav>
-        <a href={`tel:${PHONE_TEL}`} className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold hover:bg-primary/90 shadow-soft transition">
-          📞 Randevu Al
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold hover:bg-primary/90 shadow-soft transition">
+          💬 Randevu Al
         </a>
         <button onClick={() => setOpen(!open)} className="md:hidden p-2" aria-label="Menü">
           <div className="w-6 h-0.5 bg-foreground mb-1.5"></div>
