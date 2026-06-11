@@ -83,7 +83,7 @@ function Header() {
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-foreground/80 py-2">{l.label}</a>
             ))}
-            <a href={`tel:${PHONE_TEL}`} className="rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold text-center">📞 Randevu Al</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold text-center">💬 Randevu Al</a>
           </div>
         </div>
       )}
