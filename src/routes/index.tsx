@@ -10,6 +10,7 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "0532 699 41 66";
 const PHONE_TEL = "+905326994166";
+const WHATSAPP_URL = "https://wa.me/905326994166?text=Merhaba%2C%20randevu%20almak%20istiyorum.";
 const ADDRESS = "Topçular, Devran Cd. 62/A, 41300 İzmit/Kocaeli";
 const MAPS_URL = "https://maps.app.goo.gl/tyse45ZLoYtkHsYG9";
 
