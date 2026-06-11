@@ -104,9 +104,9 @@ function Hero() {
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             İzmit / Kocaeli
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-foreground">
             Sağlıklı Gülüşler<br />
-            <span className="bg-gradient-hero bg-clip-text text-transparent">İçin Buradayız</span>
+            <span className="text-primary">İçin Buradayız</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-lg">
             Diş Hekimi Havva Burla Kayahan kliniğinde modern teknoloji ve özenli bir yaklaşımla, her yaşa uygun diş sağlığı hizmetleri sunuyoruz.
