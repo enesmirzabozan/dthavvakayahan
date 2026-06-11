@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
 
 import clinicInterior from "@/assets/clinic-interior.asset.json";
 import clinicTreatment from "@/assets/clinic-treatment.asset.json";
