@@ -253,8 +253,7 @@ function Contact() {
           <p className="text-muted-foreground text-lg">Randevu ve sorularınız için bize ulaşmaktan çekinmeyin.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="space-y-4">
+        <div className="max-w-2xl mx-auto space-y-4">
             <div className="bg-card rounded-2xl p-6 border border-border flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-primary-soft flex items-center justify-center text-2xl shrink-0">📍</div>
               <div>
