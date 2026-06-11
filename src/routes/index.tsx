@@ -286,51 +286,11 @@ function Contact() {
                 loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block text-center rounded-2xl bg-primary text-primary-foreground py-4 font-semibold hover:bg-primary/90 shadow-soft transition">
+              💬 WhatsApp ile Randevu Al
+            </a>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 border border-border shadow-card h-fit">
-            <h3 className="text-2xl font-semibold mb-6">Randevu Talebi</h3>
-            {sent && (
-              <div className="mb-4 p-4 rounded-xl bg-accent/20 text-sm">Teşekkürler! Sizi telefonla aramaya yönlendiriyoruz.</div>
-            )}
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">Adınız Soyadınız</label>
-                <input
-                  type="text" required maxLength={100}
-                  value={form.name}
-                  onChange={e => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition"
-                  placeholder="Adınız"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Telefon</label>
-                <input
-                  type="tel" required maxLength={20}
-                  value={form.phone}
-                  onChange={e => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition"
-                  placeholder="0532 000 00 00"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Mesajınız</label>
-                <textarea
-                  rows={4} maxLength={500}
-                  value={form.message}
-                  onChange={e => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition resize-none"
-                  placeholder="Ne için randevu almak istiyorsunuz?"
-                />
-              </div>
-              <button type="submit" className="w-full rounded-xl bg-primary text-primary-foreground py-3.5 font-semibold hover:bg-primary/90 shadow-soft transition">
-                Randevu Talep Et
-              </button>
-              <p className="text-xs text-muted-foreground text-center">Form gönderildiğinde sizi telefonumuza yönlendireceğiz.</p>
-            </div>
-          </form>
-        </div>
       </div>
     </section>
   );
