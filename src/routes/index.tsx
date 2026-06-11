@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+
 import clinicInterior from "@/assets/clinic-interior.asset.json";
 import clinicTreatment from "@/assets/clinic-treatment.asset.json";
 import clinicExterior from "@/assets/clinic-exterior.asset.json";
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/")({
 
 const PHONE = "0532 699 41 66";
 const PHONE_TEL = "+905326994166";
+const WHATSAPP_URL = "https://wa.me/905326994166?text=Merhaba%2C%20randevu%20almak%20istiyorum.";
 const ADDRESS = "Topçular, Devran Cd. 62/A, 41300 İzmit/Kocaeli";
 const MAPS_URL = "https://maps.app.goo.gl/tyse45ZLoYtkHsYG9";
 
@@ -67,8 +69,8 @@ function Header() {
             <a key={l.href} href={l.href} className="text-foreground/70 hover:text-primary transition-colors">{l.label}</a>
           ))}
         </nav>
-        <a href={`tel:${PHONE_TEL}`} className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold hover:bg-primary/90 shadow-soft transition">
-          📞 Randevu Al
+        <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-2 text-sm font-semibold hover:bg-primary/90 shadow-soft transition">
+          💬 Randevu Al
         </a>
         <button onClick={() => setOpen(!open)} className="md:hidden p-2" aria-label="Menü">
           <div className="w-6 h-0.5 bg-foreground mb-1.5"></div>
@@ -82,7 +84,7 @@ function Header() {
             {links.map(l => (
               <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="text-foreground/80 py-2">{l.label}</a>
             ))}
-            <a href={`tel:${PHONE_TEL}`} className="rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold text-center">📞 Randevu Al</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold text-center">💬 Randevu Al</a>
           </div>
         </div>
       )}
@@ -103,16 +105,16 @@ function Hero() {
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             İzmit / Kocaeli
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-foreground">
             Sağlıklı Gülüşler<br />
-            <span className="bg-gradient-hero bg-clip-text text-transparent">İçin Buradayız</span>
+            <span className="text-primary">İçin Buradayız</span>
           </h1>
           <p className="text-lg text-muted-foreground mb-8 max-w-lg">
             Diş Hekimi Havva Burla Kayahan kliniğinde modern teknoloji ve özenli bir yaklaşımla, her yaşa uygun diş sağlığı hizmetleri sunuyoruz.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href={`tel:${PHONE_TEL}`} className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-semibold hover:bg-primary/90 shadow-soft transition hover:-translate-y-0.5">
-              📞 Randevu Al
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-semibold hover:bg-primary/90 shadow-soft transition hover:-translate-y-0.5">
+              💬 Randevu Al
             </a>
             <a href="#hizmetler" className="inline-flex items-center gap-2 rounded-full border-2 border-primary/20 px-7 py-3.5 font-semibold hover:bg-primary-soft transition">
               Hizmetlerimiz
@@ -242,18 +244,6 @@ function Hours() {
 }
 
 function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.phone.trim()) return;
-    const msg = `Merhaba, ben ${form.name}. ${form.message}`.trim();
-    window.location.href = `tel:${PHONE_TEL}`;
-    setSent(true);
-    console.log("Form:", form, msg);
-  };
-
   return (
     <section id="iletisim" className="py-20 md:py-28 bg-gradient-soft">
       <div className="max-w-7xl mx-auto px-4">
@@ -263,8 +253,7 @@ function Contact() {
           <p className="text-muted-foreground text-lg">Randevu ve sorularınız için bize ulaşmaktan çekinmeyin.</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          <div className="space-y-4">
+        <div className="max-w-2xl mx-auto space-y-4">
             <div className="bg-card rounded-2xl p-6 border border-border flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-primary-soft flex items-center justify-center text-2xl shrink-0">📍</div>
               <div>
@@ -297,51 +286,11 @@ function Contact() {
                 loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="block text-center rounded-2xl bg-primary text-primary-foreground py-4 font-semibold hover:bg-primary/90 shadow-soft transition">
+              💬 WhatsApp ile Randevu Al
+            </a>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 border border-border shadow-card h-fit">
-            <h3 className="text-2xl font-semibold mb-6">Randevu Talebi</h3>
-            {sent && (
-              <div className="mb-4 p-4 rounded-xl bg-accent/20 text-sm">Teşekkürler! Sizi telefonla aramaya yönlendiriyoruz.</div>
-            )}
-            <div className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-2">Adınız Soyadınız</label>
-                <input
-                  type="text" required maxLength={100}
-                  value={form.name}
-                  onChange={e => setForm({ ...form, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition"
-                  placeholder="Adınız"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Telefon</label>
-                <input
-                  type="tel" required maxLength={20}
-                  value={form.phone}
-                  onChange={e => setForm({ ...form, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition"
-                  placeholder="0532 000 00 00"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Mesajınız</label>
-                <textarea
-                  rows={4} maxLength={500}
-                  value={form.message}
-                  onChange={e => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-input bg-background focus:outline-none focus:ring-2 focus:ring-ring transition resize-none"
-                  placeholder="Ne için randevu almak istiyorsunuz?"
-                />
-              </div>
-              <button type="submit" className="w-full rounded-xl bg-primary text-primary-foreground py-3.5 font-semibold hover:bg-primary/90 shadow-soft transition">
-                Randevu Talep Et
-              </button>
-              <p className="text-xs text-muted-foreground text-center">Form gönderildiğinde sizi telefonumuza yönlendireceğiz.</p>
-            </div>
-          </form>
-        </div>
       </div>
     </section>
   );
