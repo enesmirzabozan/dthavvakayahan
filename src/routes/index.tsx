@@ -243,18 +243,6 @@ function Hours() {
 }
 
 function Contact() {
-  const [form, setForm] = useState({ name: "", phone: "", message: "" });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!form.name.trim() || !form.phone.trim()) return;
-    const msg = `Merhaba, ben ${form.name}. ${form.message}`.trim();
-    window.location.href = `tel:${PHONE_TEL}`;
-    setSent(true);
-    console.log("Form:", form, msg);
-  };
-
   return (
     <section id="iletisim" className="py-20 md:py-28 bg-gradient-soft">
       <div className="max-w-7xl mx-auto px-4">
