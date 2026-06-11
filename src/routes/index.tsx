@@ -112,8 +112,8 @@ function Hero() {
             Diş Hekimi Havva Burla Kayahan kliniğinde modern teknoloji ve özenli bir yaklaşımla, her yaşa uygun diş sağlığı hizmetleri sunuyoruz.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href={`tel:${PHONE_TEL}`} className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-semibold hover:bg-primary/90 shadow-soft transition hover:-translate-y-0.5">
-              📞 Randevu Al
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-semibold hover:bg-primary/90 shadow-soft transition hover:-translate-y-0.5">
+              💬 Randevu Al
             </a>
             <a href="#hizmetler" className="inline-flex items-center gap-2 rounded-full border-2 border-primary/20 px-7 py-3.5 font-semibold hover:bg-primary-soft transition">
               Hizmetlerimiz
