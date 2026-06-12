@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
-import clinicInterior from "@/assets/clinic-interior.asset.json";
-import clinicTreatment from "@/assets/clinic-treatment.asset.json";
-import clinicExterior from "@/assets/clinic-exterior.asset.json";
+const clinicInterior = { url: "https://dthavvakayahan.lovable.app/__l5e/assets-v1/d66e4caf-b658-4ab6-a6aa-d11671f70403/clinic-interior.png" };
+const clinicTreatment = { url: "https://dthavvakayahan.lovable.app/__l5e/assets-v1/8f4e4b3e-ff99-47d3-a254-18bafb9696e2/clinic-treatment.png" };
+const clinicExterior = { url: "https://dthavvakayahan.lovable.app/__l5e/assets-v1/d652d0d8-c81a-46d4-9f69-59ef26d833b8/clinic-exterior.png" };
 
 export const Route = createFileRoute("/")({
   component: HomePage,
